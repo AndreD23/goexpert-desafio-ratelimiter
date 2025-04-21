@@ -1,0 +1,25 @@
+services:
+  app:
+    build: .
+    container_name: limiter
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+    environment:
+      - REDIS_URL=redis:6379
+    networks:
+      - app-network
+
+  redis:
+    image: redis:6
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+
+networks:
+  app-network:
+    driver: bridge
