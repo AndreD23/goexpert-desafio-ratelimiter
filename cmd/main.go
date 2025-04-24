@@ -18,7 +18,7 @@ func main() {
 	config := configs.NewConfig()
 
 	// Initialize Redis client
-	redisClient := redis.NewClient(&redis.Options{Addr: "localhost:6379"})
+	redisClient := redis.NewClient(&redis.Options{Addr: "redis:6379"})
 	rStore := redisStore.NewRedisStore(redisClient)
 	rLimiter := limiter.NewRateLimiter(rStore, config.RequestsPerIP, config.RequestsPerToken, config.BlockDuration)
 

@@ -36,7 +36,7 @@ func loadConfig() (*Config, error) {
 	// Tenta ler o arquivo .env
 	viper.SetConfigFile(".env")
 	if err := viper.ReadInConfig(); err != nil {
-		panic(fmt.Errorf("falha ao ler o arquivo .env: %w", err))
+		fmt.Println("Nenhum arquivo .env encontrado, usando variáveis de ambiente")
 	}
 
 	// Define valores padrão

@@ -28,12 +28,12 @@ cp .env.example .env
 
 1. Inicie os containers:
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 2. Verifique se os containers estão rodando:
 ```bash
-docker-compose ps
+docker compose ps
 ```
 
 ---
